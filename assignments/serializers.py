@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Assignment, AssignmentQuestion, AssignmentMultiAnswer, AssignmentEssayAnswer, AssignmentFillBlankAnswer
+from questions.serializers import QuestionSerializer
 
 class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -8,9 +9,10 @@ class AssignmentSerializer(serializers.ModelSerializer):
         
 
 class AssignmentQuestionSerializer(serializers.ModelSerializer):
+    question = QuestionSerializer()
     class Meta:
         model = AssignmentQuestion
-        fields = ['question__text', 'question__question_type']
+        fields = ['id', 'assignment', 'question']
         
 
 class AssignmentMultiAnswerSerializer(serializers.ModelSerializer):
