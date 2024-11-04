@@ -28,7 +28,7 @@ class AssignmentQuestion(models.Model):
         db_table = "assignment_questions"
 
     def __str__(self) -> str:
-        return f"{self.question.text[:50]}{'. . .' if len(self.question.text) > 50 else ''}"
+        return f"{self.id} - {self.assignment.assignee} - {self.question.text[:50]}{'. . .' if len(self.question.text) > 50 else ''}"
 
 
 class BaseAnswer(models.Model):
