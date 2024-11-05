@@ -43,8 +43,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework_simplejwt",
     "rest_framework_simplejwt.token_blacklist",
-    "crispy_forms",
-    "crispy_bootstrap5",
     'drf_yasg',
     
     "authorization",
@@ -178,8 +176,6 @@ LOGGING = {
         },
     },
 }
-
-CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 SWAGGER_SETTINGS = {
